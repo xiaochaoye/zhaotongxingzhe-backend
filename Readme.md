@@ -4,4 +4,5 @@
 
 ### 功能介绍
 * 打开knife4j文档，根据侧边栏的菜单可以测试接口。了解基本使用
-![1](.assets/屏幕截图 1.png)
+[//]: # (![1](.assets/屏幕截图 1.png))
+![1](https://github.com/xiaochaoye/zhaotongxingzhe-backend/blob/master/.assets/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%201.png)
