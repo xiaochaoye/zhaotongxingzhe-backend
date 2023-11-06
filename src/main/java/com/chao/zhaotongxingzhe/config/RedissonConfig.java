@@ -23,6 +23,7 @@ public class RedissonConfig {
 
     private String port;
 
+    //redis就注释下两行
     @Value("${spring.redis.password}")
     private String password;
 
@@ -32,6 +33,7 @@ public class RedissonConfig {
         Config config = new Config();
         String redisAddress = String.format("redis://%s:%s", host, port);
         config.useSingleServer().setAddress(redisAddress).setDatabase(3).setPassword(password);
+        //config.useSingleServer().setAddress(redisAddress).setDatabase(3);    redis无密码使用
         // 2. 创建实例
         RedissonClient redisson = Redisson.create(config);
         return redisson;
