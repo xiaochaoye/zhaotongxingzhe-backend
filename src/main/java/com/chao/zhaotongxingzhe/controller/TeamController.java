@@ -88,15 +88,6 @@ public class TeamController {
         return ResultUtils.success(team);
     }
 
-    //    //只要登录就能查看队伍
-//    @GetMapping("/list")
-//    public BaseResponse<List<TeamUserVO>> listTeams(TeamQuery teamQuery, HttpServletRequest request) {
-//        if (teamQuery == null) {
-//            throw new BusinessException(ErrorCode.PARAMS_ERROR);
-//        }
-//        List<TeamUserVO> teamList = teamService.listTeams(teamQuery, true);
-//        return ResultUtils.success(teamList);
-//    }
     @GetMapping("/list")
     public BaseResponse<List<TeamUserVO>> listTeams(TeamQuery teamQuery, HttpServletRequest request) {
         if (teamQuery == null) {
