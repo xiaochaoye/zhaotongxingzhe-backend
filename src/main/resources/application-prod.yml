@@ -4,14 +4,14 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     #线上数据库url
-    url: jdbc:mysql://47.120.46.29:3306/zhaotongxingzhe
+    url: jdbc:mysql://线上数据库地址:3306/zhaotongxingzhe
     username: root
-    password: yjq@wc123456
+    password: 密码
   redis:
     port: 6379
-    host: 47.120.46.29
+    host: 线上redis地址
     database: 0
-    password: yjq@wc123456
+    password: 密码
   # session 失效时间
   session:
     timeout: 86400
