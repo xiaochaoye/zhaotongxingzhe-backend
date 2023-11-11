@@ -88,15 +88,6 @@ public class TeamController {
         return ResultUtils.success(team);
     }
 
-    //    //只要登录就能查看队伍
-//    @GetMapping("/list")
-//    public BaseResponse<List<TeamUserVO>> listTeams(TeamQuery teamQuery, HttpServletRequest request) {
-//        if (teamQuery == null) {
-//            throw new BusinessException(ErrorCode.PARAMS_ERROR);
-//        }
-//        List<TeamUserVO> teamList = teamService.listTeams(teamQuery, true);
-//        return ResultUtils.success(teamList);
-//    }
     @GetMapping("/list")
     public BaseResponse<List<TeamUserVO>> listTeams(TeamQuery teamQuery, HttpServletRequest request) {
         if (teamQuery == null) {
@@ -215,14 +206,6 @@ public class TeamController {
         QueryWrapper<UserTeam> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("userId", loginUser.getId());
         List<UserTeam> userTeamList = userTeamService.list(queryWrapper);
-        // 取出不重复的队伍 id
-        // teamId userId
-        // 1, 2
-        // 1, 3
-        // 2, 3
-        // result
-        // 1 => 2, 3
-        // 2 => 3
         Map<Long, List<UserTeam>> listMap = userTeamList.stream()
                 .collect(Collectors.groupingBy(UserTeam::getTeamId));
         List<Long> idList = new ArrayList<>(listMap.keySet());
